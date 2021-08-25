@@ -13,6 +13,6 @@ class Post(models.Model):
     )
 
 
-class Tags(models.Model):
+class Tag(models.Model):
     title = models.CharField(max_length=100)
-    publications = models.ManyToManyField(Post)
+    posts = models.ManyToManyField(Post, related_name="tags")
